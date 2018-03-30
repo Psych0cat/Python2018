@@ -144,10 +144,8 @@ class EchoServer:
             if data:
                 j_receive = JSONRequest(data)
                 # Приводим полученные данные к строковому виду
-                str_data = j_receive.body
-
                 # Сохраняем запрос на сервере
-                self._requests.append(str_data)
+                self._requests.append(j_receive.body)
 
         except ConnectionResetError:
             # В случае разрыва соединения с клиентом и наличии данного клиента в списке подключений
